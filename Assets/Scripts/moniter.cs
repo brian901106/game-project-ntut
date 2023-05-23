@@ -6,22 +6,25 @@ public class moniter : MonoBehaviour
 {
     public GameObject phoneTexts;
     public GameObject passwordInputPrefab;
-    public GameObject canvas;
+    public GameObject GameUI;
 
     private void Start()
     {
         phoneTexts = GameObject.FindWithTag("phoneText");
+        GameUI = GameObject.FindWithTag("GameUI");
     }
-    private void OnMouseDown()
+    private void OnMouseUp()
     {
         Debug.Log("點擊螢幕");
 
         phoneTexts.GetComponent<phoneTexts>().newText("這邊似乎可以輸入密碼",36);
-
+        GameUI.GetComponent<inputController>().setInput("輸入密碼...");
+        /*
         if (GameObject.FindGameObjectWithTag("passwordInput") == null)
         {
-            Instantiate(passwordInputPrefab, canvas.transform);
+            Instantiate(passwordInputPrefab, GameUI.transform);
+            Debug.Log("點擊螢幕2");
         }
-
+        */
     }
 }

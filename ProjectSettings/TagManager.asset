@@ -5,10 +5,17 @@ TagManager:
   serializedVersion: 2
   tags:
   - phoneText
-  - passwordInput
-  - top-left
-  - top-right
-  - down-right
+  - bg1
+  - bg2
+  - bg3
+  - phoneTextsBg
+  - GameUI
+  - yesButton
+  - noButton
+  - clue
+  - pic_of_clue
+  - inputSystem
+  - drawer(shared)
   layers:
   - Default
   - TransparentFX

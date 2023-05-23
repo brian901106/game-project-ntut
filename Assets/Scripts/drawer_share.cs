@@ -1,9 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class sofa : MonoBehaviour
+public class drawer_share : MonoBehaviour
 {
     public GameObject phoneTexts;
 
@@ -13,9 +12,10 @@ public class sofa : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        Debug.Log("點擊沙發");
+        Debug.Log("點擊共享抽屜");
 
-        phoneTexts.GetComponent<phoneTexts>().newText("普通的布沙發，翻了翻椅墊下沒有東西", 36);
+        phoneTexts.GetComponent<phoneTexts>().newText("收到隔壁房間遞來的鑰匙", 36);
+        box.can_be_open = true;
 
     }
 }

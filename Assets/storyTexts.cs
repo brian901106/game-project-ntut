@@ -5,25 +5,17 @@ using UnityEngine.UI;
 
 public class storyTexts : MonoBehaviour
 {
-
     // Start is called before the first frame update
     private void Start()
     {
-        GetComponent<Text>().text = "go!";
+        GetComponent<Text>().text = "目標:找到四個字的密碼";
     }
 
-    int a = 4;
     // Update is called once per frame
     void Update()
     {
-        if (a <= 0)
-        {
-            GetComponent<Text>().text = "congret!";
-        }
-        else if (Input.GetKeyDown("space"))
-        {
-            GetComponent<Text>().text = a + "left!";    // 前面加空字串，是為了把 整數a 轉為 字串。
-            a--;
+        if (passwordInput.password_correct == true){
+            GetComponent<Text>().text = "目標:達成\n通過門前往下一關";    // 前面加空字串，是為了把 整數a 轉為 字串。
         }
     }
 }

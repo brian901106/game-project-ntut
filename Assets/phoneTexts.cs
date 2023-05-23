@@ -5,11 +5,14 @@ using UnityEngine.UI;
 
 public class phoneTexts : MonoBehaviour
 {
-
+    private int ptext_id;
+    public GameObject GameUI;
     // Start is called before the first frame update
     private void Start()
     {
+        GameUI = GameObject.FindWithTag("GameUI");
         GetComponent<Text>().text = "";
+        ptext_id = 0;
     }
 
 
@@ -19,9 +22,20 @@ public class phoneTexts : MonoBehaviour
 
     }
 
-    public void newText(string newText, int newSize = 48)
+    public void newText(string newText, int newSize = 36 ,int text_id = -1)
     {
+        ptext_id = text_id;
+        if (ptext_id == -1)
+            GameUI.GetComponent<ynButtonController>().unShowYNButtons();
+        else if (ptext_id != -1)
+            GameUI.GetComponent<ynButtonController>().showYNButtons();
         GetComponent<Text>().text = newText;
         GetComponent<Text>().fontSize = newSize;
     }
+
+    public int getptextid()
+    {
+        return ptext_id;
+    }
+
 }
