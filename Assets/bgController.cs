@@ -82,6 +82,11 @@ public class bgController : MonoBehaviour
         door_is_open = true;
     }
 
+    public bool getDoorStatus()
+    {
+        return door_is_open;
+    }
+
     public int getBgNum()
     {
         return bg_num;
