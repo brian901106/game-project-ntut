@@ -588,6 +588,7 @@ GameObject:
   - component: {fileID: 291823730}
   - component: {fileID: 291823731}
   - component: {fileID: 291823732}
+  - component: {fileID: 291823733}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: GameUI
@@ -697,9 +698,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftButton: {fileID: 1569066440}
   rightButton: {fileID: 599109372}
-  bg1: {fileID: 0}
-  bg2: {fileID: 0}
-  bg3: {fileID: 0}
+  bg1: {fileID: 1628326514}
+  bg2: {fileID: 1153455566}
+  bg3: {fileID: 2112333881}
   bg2_door_open: {fileID: 21300000, guid: 5a3fbf79982b4ae41964ace23074a3d7, type: 3}
 --- !u!114 &291823731
 MonoBehaviour:
@@ -730,6 +731,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputSystem: {fileID: 0}
+--- !u!114 &291823733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 291823725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d11eebc00c74a8647877d5ec294ef3d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  now_level: 0
 --- !u!1 &359532305
 GameObject:
   m_ObjectHideFlags: 0

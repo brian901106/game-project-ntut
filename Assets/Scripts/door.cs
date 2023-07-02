@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class door : MonoBehaviour
 {
@@ -19,7 +18,7 @@ public class door : MonoBehaviour
         {
             Debug.Log("完成關卡");
 
-            SceneManager.LoadScene("Player1_2");
+            GameUI.GetComponent<scenesController>().LoadLevel(2);
         }
     }
 }
