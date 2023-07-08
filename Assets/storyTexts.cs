@@ -8,7 +8,7 @@ public class storyTexts : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        GetComponent<Text>().text = "目標:找到四個字的密碼";
+
     }
 
     // Update is called once per frame
