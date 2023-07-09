@@ -16,6 +16,8 @@ TagManager:
   - pic_of_clue
   - inputSystem
   - drawer(shared)
+  - clonedToolsDetail
+  - clonedToolsInBox
   layers:
   - Default
   - TransparentFX
