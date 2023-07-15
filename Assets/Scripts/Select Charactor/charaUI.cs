@@ -26,11 +26,11 @@ public class charaUI : MonoBehaviour
 
     void Chara1btnOnClick()
     {
-        gameObject.GetComponent<scenesController>().LoadLevel(2);
+        gameObject.GetComponent<scenesController>().LoadLevel("New_teach");
     }
     void Chara2btnOnClick()
     {
-        gameObject.GetComponent<scenesController>().LoadLevel(3);   // update loadlevel from 4 to 3
+        gameObject.GetComponent<scenesController>().LoadLevel("New_teach");
     }
     void BackbtnOnClick()
     {
