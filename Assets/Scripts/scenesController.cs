@@ -23,4 +23,9 @@ public class scenesController : MonoBehaviour
         now_level = level;
         SceneManager.LoadScene(level);
     }
+
+    public void LoadLevel(string level)
+    {
+        SceneManager.LoadScene(level);
+    }
 }
