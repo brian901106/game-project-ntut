@@ -4,11 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - phoneText
   - bg1
   - bg2
   - bg3
-  - phoneTextsBg
   - GameUI
   - yesButton
   - noButton
@@ -18,6 +16,9 @@ TagManager:
   - drawer(shared)
   - clonedToolsDetail
   - clonedToolsInBox
+  - hintTexts
+  - hintTextsBg
+  - toolBox
   layers:
   - Default
   - TransparentFX
