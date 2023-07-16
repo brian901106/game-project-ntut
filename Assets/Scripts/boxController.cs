@@ -2,16 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class prefeb : MonoBehaviour
+public class boxController : MonoBehaviour
 {
-    public int toolId;
-
-    GameObject clue;
-
+    public int boxId;
     // Start is called before the first frame update
     void Start()
     {
-        clue = GameObject.Find("Clue");
+        
     }
 
     // Update is called once per frame
@@ -21,10 +18,10 @@ public class prefeb : MonoBehaviour
     }
 
     /// <summary>
-    /// 按下顯示物品詳細資料 (待刪)
+    /// 按下工具欄告知GameUI被點了
     /// </summary>
     private void OnMouseDown()
     {
-        clue.GetComponent<clue>().showClue(toolId);
+        GameObject.Find("GameUI").GetComponent<toolBoxController>().OnMouseDownOnSingleBox(boxId);
     }
 }
