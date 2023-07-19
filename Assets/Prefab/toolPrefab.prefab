@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4923526474361523168}
   - component: {fileID: 5618952214660430800}
   - component: {fileID: 715208444780300608}
-  - component: {fileID: 321523147190077149}
+  - component: {fileID: 1713544555}
   m_Layer: 0
-  m_Name: key
+  m_Name: toolPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 11
-  m_Sprite: {fileID: 21300000, guid: 18175c8d82b03be448c17e4ac57ef3fa, type: 3}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,9 +99,9 @@ PolygonCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.82, y: 2.82}
+    oldSize: {x: 0.16, y: 0.16}
     newSize: {x: 2.82, y: 2.82}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -163,7 +163,7 @@ PolygonCollider2D:
       - {x: 0.38, y: 0.38}
       - {x: 0.31, y: 0.37}
       - {x: 0.29999998, y: 0.38}
---- !u!114 &321523147190077149
+--- !u!114 &1713544555
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,5 +175,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b73f5c2a1ab5ea044b48fa064767f420, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clue: {fileID: 0}
-  toolId: 1

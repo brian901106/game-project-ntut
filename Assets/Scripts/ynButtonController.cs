@@ -34,7 +34,7 @@ public class ynButtonController : MonoBehaviour
     public void yesButtonOnClick()
     {
         int id = hintTexts.GetComponent<hintTexts>().getHintId();
-        clue.GetComponent<clue>().showClue(id);
+        clue.GetComponent<clue>().showPaper(id);
     }
 
     public void noButtonOnClick()

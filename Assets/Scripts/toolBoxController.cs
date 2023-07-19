@@ -6,9 +6,10 @@ using UnityEngine;
 public class toolBoxController : MonoBehaviour
 {
     public GameObject toolBox;
-    public GameObject[] boxes;
-    public GameObject key;
-    GameObject toolObj;
+    public GameObject toolPrefab;
+    public GameObject clue;
+
+    GameObject newTool;
 
     int toolCount;
     int[] toolIdInBox = new int[9];
@@ -18,8 +19,10 @@ public class toolBoxController : MonoBehaviour
     void Start()
     {
         toolBox = GameObject.FindGameObjectWithTag("toolBox");
+        clue = GameObject.FindGameObjectWithTag("clue");
         toolCount = 0;
 
+        //取得toolbox position，用以設定存入tools的位置
         for (int n = 0; n < 9; n++)
         {
             toolPosition[n] = toolBox.transform.GetChild(n).position;
@@ -35,14 +38,18 @@ public class toolBoxController : MonoBehaviour
 
     public void ShowInToolbox(int id)
     {
-        if (id == 1)
-        {
-            toolIdInBox[toolCount] = key.GetComponent<prefeb>().toolId;
-            toolObj = Instantiate(key, toolPosition[toolCount], Quaternion.identity);
-            toolObj.tag = "clonedToolsInBox";
-        }
+
+        newTool = Instantiate(toolPrefab, toolBox.transform, true);
+        newTool.GetComponent<Transform>().position = toolPosition[toolCount];
+        newTool.GetComponent<SpriteRenderer>().sprite = clue.GetComponent<clue>().GetToolSprite(id);
+        newTool.GetComponent<toolPrefab>().SetToolId(id);
+        newTool.tag = "clonedToolsInBox";
+
+        toolIdInBox[toolCount] = id;
+
         toolCount++;
     }
+
 
     /// <summary>
     /// 點下工具欄顯示欄內物品
@@ -50,9 +57,7 @@ public class toolBoxController : MonoBehaviour
     /// <param name="boxId">工具欄ID</param>
     public void OnMouseDownOnSingleBox(int boxId)
     {
-        if (toolIdInBox[boxId] != -1)
-        {
-            GameObject.Find("Clue").GetComponent<clue>().showClue(toolIdInBox[boxId]);
-        }   
+        clue.GetComponent<clue>().showTool(toolIdInBox[boxId]);
     }
+
 }

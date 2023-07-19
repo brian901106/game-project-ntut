@@ -21,8 +21,8 @@ public class drawer_share : MonoBehaviour
         if (GameUI.GetComponent<eventController>().CheckStatus(1) == true)
         {
             hintTexts.GetComponent<hintTexts>().newText("收到隔壁房間遞來的鑰匙");
-            clue.GetComponent<clue>().showClue(1);
-            GameUI.GetComponent<toolBoxController>().ShowInToolbox(1);
+            clue.GetComponent<clue>().showTool(0);
+            GameUI.GetComponent<toolBoxController>().ShowInToolbox(0);
 
             GameUI.GetComponent<eventController>().ChangeStatus(0, true);//箱子可以打開
             GameUI.GetComponent<eventController>().ChangeStatus(1, false);//鑰匙事件不再觸發

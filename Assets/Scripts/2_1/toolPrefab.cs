@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class prefeb : MonoBehaviour
+public class toolPrefab : MonoBehaviour
 {
     public int toolId;
 
@@ -20,11 +20,15 @@ public class prefeb : MonoBehaviour
         
     }
 
+    public void SetToolId(int id)
+    {
+        toolId = id;
+    }
     /// <summary>
     /// 按下顯示物品詳細資料 (待刪)
     /// </summary>
     private void OnMouseDown()
     {
-        clue.GetComponent<clue>().showClue(toolId);
+        clue.GetComponent<clue>().showTool(toolId);
     }
 }

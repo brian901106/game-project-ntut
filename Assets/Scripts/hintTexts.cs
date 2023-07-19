@@ -21,10 +21,13 @@ public class hintTexts : MonoBehaviour
     {
 
     }
-
-    //newText(string 要顯示的字,
-    //        int 透過id判斷是否顯示YNbutton
-    //        int 字體大小(預設36),
+    /// <summary>
+    /// 讓手機顯示新資料
+    /// (要顯示的字, id = -1時不顯示YNbutton, 字體大小(預設36))
+    /// </summary>
+    /// <param name="id">
+    /// id = -1時不顯示YNbutton,id = 0以上時顯示對應的紙條
+    /// </param>
     public void newText(string newText, int id = -1, int newSize = 36)
     {
         hint_id = id;

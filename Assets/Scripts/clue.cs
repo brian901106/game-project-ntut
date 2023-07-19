@@ -7,8 +7,9 @@ public class clue : MonoBehaviour
 {
     public GameObject pic;
     public GameObject GameUI;
-    public Sprite[] clues;
-    private int now_open_id;
+    public Sprite[] tools;
+    public Sprite[] papers;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +22,26 @@ public class clue : MonoBehaviour
         
     }
 
-    public void showClue(int id = -1)
+
+    public void showTool(int id)
     {
-        now_open_id = id;
         pic.SetActive(true);
-        pic.GetComponent<Image>().sprite = clues[id];
-        pic.GetComponent<RectTransform>().sizeDelta = new Vector2(clues[id].rect.width, clues[id].rect.height);
+        pic.GetComponent<Image>().sprite = tools[id];
+        pic.GetComponent<RectTransform>().sizeDelta = new Vector2(tools[id].rect.width, tools[id].rect.height);
     }
+
+    public void showPaper(int id)
+    {
+        pic.SetActive(true);
+        pic.GetComponent<Image>().sprite = papers[id];
+        pic.GetComponent<RectTransform>().sizeDelta = new Vector2(papers[id].rect.width, papers[id].rect.height);
+    }
+
+    public Sprite GetToolSprite(int id)
+    {
+        return tools[id];
+    }
+
     public void closeClue()
     {
         pic.SetActive(false);

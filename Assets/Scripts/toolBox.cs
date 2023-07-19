@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class boxController : MonoBehaviour
+public class toolBox : MonoBehaviour
 {
     public int boxId;
+    GameObject GameUI;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameUI = GameObject.FindGameObjectWithTag("GameUI");
     }
 
     // Update is called once per frame
@@ -22,6 +23,6 @@ public class boxController : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
-        GameObject.Find("GameUI").GetComponent<toolBoxController>().OnMouseDownOnSingleBox(boxId);
+        GameUI.GetComponent<toolBoxController>().OnMouseDownOnSingleBox(boxId);
     }
 }
