@@ -8,6 +8,8 @@ public class ynButtonController : MonoBehaviour
     public GameObject nBtn;
     public GameObject hintTexts;
     public GameObject clue;
+
+    int event_id;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,10 +22,11 @@ public class ynButtonController : MonoBehaviour
         
     }
 
-    public void showYNButtons()
+    public void showYNButtons(int id)
     {
         yBtn.SetActive(true);
         nBtn.SetActive(true);
+        event_id = id;
     }
     public void unShowYNButtons()
     {
@@ -33,8 +36,7 @@ public class ynButtonController : MonoBehaviour
 
     public void yesButtonOnClick()
     {
-        int id = hintTexts.GetComponent<hintTexts>().getHintId();
-        clue.GetComponent<clue>().showPaper(id);
+        clue.GetComponent<clue>().showPaper(event_id);
     }
 
     public void noButtonOnClick()

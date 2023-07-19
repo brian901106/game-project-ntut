@@ -2499,9 +2499,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pic: {fileID: 519727159}
   GameUI: {fileID: 1983957959}
-  clues:
-  - {fileID: 21300000, guid: 72d385be034ffa141a58b321be96e62c, type: 3}
+  tools:
   - {fileID: 21300000, guid: 18175c8d82b03be448c17e4ac57ef3fa, type: 3}
+  papers:
+  - {fileID: 21300000, guid: 72d385be034ffa141a58b321be96e62c, type: 3}
 --- !u!114 &746652042
 MonoBehaviour:
   m_ObjectHideFlags: 0
