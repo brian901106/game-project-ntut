@@ -43,6 +43,12 @@ public class clue : MonoBehaviour
         clue_id = id;
     }
 
+    public void GetTool(int id)
+    {
+        ShowTool(id);
+        GameUI.GetComponent<toolBoxController>().ShowInToolbox(0);
+    }
+
     public int GetClueType()
     {
         return clue_type;
