@@ -57,7 +57,7 @@ public class toolBoxController : MonoBehaviour
     /// <param name="boxId">¤u¨ãÄæID</param>
     public void OnMouseDownOnSingleBox(int boxId)
     {
-        clue.GetComponent<clue>().showTool(toolIdInBox[boxId]);
+        clue.GetComponent<clue>().ShowTool(toolIdInBox[boxId]);
     }
 
 }

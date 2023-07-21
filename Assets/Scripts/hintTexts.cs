@@ -20,19 +20,28 @@ public class hintTexts : MonoBehaviour
 
     }
     /// <summary>
-    /// 讓手機顯示新資料
-    /// (要顯示的字, id = -1時不顯示YNbutton, 字體大小(預設36))
+    /// 讓手機顯示新文字
+    /// </summary>
+    public void newText(string newText)
+    {
+        GameUI.GetComponent<ynButtonController>().unShowYNButtons();
+        GetComponent<Text>().text = newText;
+    }
+    /// <summary>
+    /// 讓手機顯示新文字，出現YNbutton，按下後觸發設定好的Event
     /// </summary>
     /// <param name="id">
-    /// id = -1時不顯示YNbutton,id = 0以上時顯示對應的紙條
+    /// YNbutton，按下後觸發設定好的Event
     /// </param>
-    public void newText(string newText, int id = -1, int newSize = 36)
+    public void newText(string newText, int event_id = -1)
     {
-        if (id == -1)
-            GameUI.GetComponent<ynButtonController>().unShowYNButtons();
-        else if (id != -1)
-            GameUI.GetComponent<ynButtonController>().showYNButtons(id);
+        GameUI.GetComponent<ynButtonController>().showYNButtons();
+        GameUI.GetComponent<ynButtonController>().SetEventID(event_id);
         GetComponent<Text>().text = newText;
+    }
+
+    public void ChangeTextSize(int newSize)
+    {
         GetComponent<Text>().fontSize = newSize;
     }
 

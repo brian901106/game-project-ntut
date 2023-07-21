@@ -29,6 +29,6 @@ public class toolPrefab : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
-        clue.GetComponent<clue>().showTool(toolId);
+        clue.GetComponent<clue>().ShowTool(toolId);
     }
 }

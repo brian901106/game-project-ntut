@@ -25,7 +25,7 @@ public class clue : MonoBehaviour
     {
         
     }
-    public void showPaper(int id)
+    public void ShowPaper(int id)
     {
         pic.SetActive(true);
         pic.GetComponent<Image>().sprite = papers[id];
@@ -34,7 +34,7 @@ public class clue : MonoBehaviour
         clue_id = id;
     }
 
-    public void showTool(int id)
+    public void ShowTool(int id)
     {
         pic.SetActive(true);
         pic.GetComponent<Image>().sprite = tools[id];

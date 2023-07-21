@@ -7,13 +7,14 @@ public class ynButtonController : MonoBehaviour
     public GameObject yBtn;
     public GameObject nBtn;
     public GameObject hintTexts;
-    public GameObject clue;
+    public GameObject GameUI;
 
     int event_id;
     // Start is called before the first frame update
     void Start()
     {
-
+        GameUI = GameObject.FindWithTag("GameUI");
+        hintTexts = GameObject.FindWithTag("hintTexts");
     }
 
     // Update is called once per frame
@@ -22,11 +23,10 @@ public class ynButtonController : MonoBehaviour
         
     }
 
-    public void showYNButtons(int id)
+    public void showYNButtons()
     {
         yBtn.SetActive(true);
         nBtn.SetActive(true);
-        event_id = id;
     }
     public void unShowYNButtons()
     {
@@ -36,12 +36,17 @@ public class ynButtonController : MonoBehaviour
 
     public void yesButtonOnClick()
     {
-        clue.GetComponent<clue>().showPaper(event_id);
+        GameUI.GetComponent<eventController>().TriggerYNEvent(event_id);
     }
 
     public void noButtonOnClick()
     {
         unShowYNButtons();
         hintTexts.GetComponent<hintTexts>().newText("");
+    }
+
+    public void SetEventID(int id)
+    {
+        event_id = id;
     }
 }

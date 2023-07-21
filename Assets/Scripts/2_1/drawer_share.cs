@@ -6,28 +6,25 @@ public class drawer_share : MonoBehaviour
 {
     public GameObject hintTexts;
     public GameObject GameUI;
-    public GameObject clue;
 
     private void Start()
     {
         hintTexts = GameObject.FindWithTag("hintTexts");
         GameUI = GameObject.FindWithTag("GameUI");
-        clue = GameObject.FindWithTag("clue");
     }
     private void OnMouseDown()
     {
         Debug.Log("點擊共享抽屜");
 
-        if (GameUI.GetComponent<eventController>().CheckStatus(1) == true)
+        if (!GameUI.GetComponent<eventController>().CheckIfProblemSolved(0))
         {
             hintTexts.GetComponent<hintTexts>().newText("收到隔壁房間遞來的鑰匙");
-            clue.GetComponent<clue>().showTool(0);
-            GameUI.GetComponent<toolBoxController>().ShowInToolbox(0);
 
-            GameUI.GetComponent<eventController>().ChangeStatus(0, true);//箱子可以打開
-            GameUI.GetComponent<eventController>().ChangeStatus(1, false);//鑰匙事件不再觸發
+            GameUI.GetComponent<itemCreator>().GetTool(0);
+
+            GameUI.GetComponent<eventController>().SolveProblem(0);
         }
-        if (GameUI.GetComponent<eventController>().CheckStatus(1) == false)
+        else
         {
             hintTexts.GetComponent<hintTexts>().newText("抽屜空了");
         }
