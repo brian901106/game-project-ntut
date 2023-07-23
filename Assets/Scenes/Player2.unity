@@ -1378,8 +1378,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pic: {fileID: 1279584064}
   GameUI: {fileID: 1545804705}
-  clues:
+  papers:
   - {fileID: 21300000, guid: 72d385be034ffa141a58b321be96e62c, type: 3}
+  tools:
   - {fileID: 21300000, guid: 18175c8d82b03be448c17e4ac57ef3fa, type: 3}
   - {fileID: 21300000, guid: 18175c8d82b03be448c17e4ac57ef3fa, type: 3}
 --- !u!114 &610373074
@@ -2339,6 +2340,52 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 952912140}
   m_CullTransparentMesh: 1
+--- !u!1 &953627895
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 953627897}
+  - component: {fileID: 953627896}
+  m_Layer: 0
+  m_Name: GameMannager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &953627896
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953627895}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7997476c397c27408ec3a090c1b6f02, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _GameUI: {fileID: 1545804705}
+  _hintTexts: {fileID: 858008892}
+  _clue: {fileID: 610373072}
+--- !u!4 &953627897
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 953627895}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.7831693, y: -0.75958353, z: 32.149376}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &985590008
 GameObject:
   m_ObjectHideFlags: 0
@@ -2919,9 +2966,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c7e0a510e0e5a74b8564c74cd821b52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hintTexts: {fileID: 858008892}
-  GameUI: {fileID: 1545804705}
-  clue: {fileID: 0}
 --- !u!61 &1209814576
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4123,8 +4167,8 @@ GameObject:
   - component: {fileID: 1545804707}
   - component: {fileID: 1545804714}
   - component: {fileID: 1545804706}
-  - component: {fileID: 1545804715}
   - component: {fileID: 1545804716}
+  - component: {fileID: 1545804715}
   m_Layer: 5
   m_Name: GameUI
   m_TagString: GameUI
@@ -4173,7 +4217,7 @@ MonoBehaviour:
   yBtn: {fileID: 1869439722}
   nBtn: {fileID: 1130544704}
   hintTexts: {fileID: 858008892}
-  clue: {fileID: 610373072}
+  GameUI: {fileID: 0}
 --- !u!114 &1545804709
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4306,10 +4350,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1545804705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: becd8c06d7b9aa0418076e40d05ae8b2, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c600fa5c092405468c5c822880729e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  can_interact: 0000
 --- !u!114 &1545804716
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4323,17 +4366,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toolBox: {fileID: 952912140}
-  boxes:
-  - {fileID: 2022370203}
-  - {fileID: 1263477193}
-  - {fileID: 1321639842}
-  - {fileID: 624548072}
-  - {fileID: 1671863721}
-  - {fileID: 142946836}
-  - {fileID: 985590008}
-  - {fileID: 1492087317}
-  - {fileID: 936054407}
-  key: {fileID: 8112662513329835231, guid: fca8a50cc364a004195a62dfaa3bcf35, type: 3}
+  toolPrefab: {fileID: 8112662513329835231, guid: fca8a50cc364a004195a62dfaa3bcf35, type: 3}
+  clue: {fileID: 610373072}
 --- !u!1 &1549308337
 GameObject:
   m_ObjectHideFlags: 0
