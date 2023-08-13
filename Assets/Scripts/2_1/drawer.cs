@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class drawer : MonoBehaviour
 {
-    public GameObject phoneTexts;
+    public GameObject GameUI;
 
     private void Start()
     {
-        phoneTexts = GameObject.FindWithTag("hintTexts");
+        GameUI = GameObject.FindWithTag("GameUI");
     }
     private void OnMouseDown()
     {
         Debug.Log("헕을⒱켗");
 
-        phoneTexts.GetComponent<hintTexts>().newText("づず⒱켗");
+        GameUI.GetComponent<hintTextsController>().newText("づず⒱켗");
 
     }
 }

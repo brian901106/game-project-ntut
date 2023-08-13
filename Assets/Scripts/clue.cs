@@ -27,20 +27,27 @@ public class clue : MonoBehaviour
     }
     public void ShowPaper(int id)
     {
-        pic.SetActive(true);
-        pic.GetComponent<Image>().sprite = papers[id];
-        pic.GetComponent<RectTransform>().sizeDelta = new Vector2(papers[id].rect.width, papers[id].rect.height);
-        clue_type = 0;
-        clue_id = id;
+        if (papers[id] != null)
+        {
+            pic.SetActive(true);
+            pic.GetComponent<Image>().sprite = papers[id];
+            pic.GetComponent<RectTransform>().sizeDelta = new Vector2(papers[id].rect.width, papers[id].rect.height);
+            clue_type = 0;
+            clue_id = id;
+        }
     }
 
     public void ShowTool(int id)
     {
-        pic.SetActive(true);
-        pic.GetComponent<Image>().sprite = tools[id];
-        pic.GetComponent<RectTransform>().sizeDelta = new Vector2(tools[id].rect.width, tools[id].rect.height);
-        clue_type = 1;
-        clue_id = id;
+        if(tools[id] != null)
+        {
+            pic.SetActive(true);
+            pic.GetComponent<Image>().sprite = tools[id];
+            pic.GetComponent<RectTransform>().sizeDelta = new Vector2(tools[id].rect.width, tools[id].rect.height);
+            clue_type = 1;
+            clue_id = id;
+        }
+
     }
 
     public void GetTool(int id)

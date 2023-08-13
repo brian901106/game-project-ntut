@@ -5,17 +5,17 @@ using UnityEngine;
 
 public class sofa : MonoBehaviour
 {
-    public GameObject phoneTexts;
+    public GameObject GameUI;
 
     private void Start()
     {
-        phoneTexts = GameObject.FindWithTag("hintTexts");
+        GameUI = GameObject.FindWithTag("GameUI");
     }
     private void OnMouseDown()
     {
         Debug.Log("點擊沙發");
 
-        phoneTexts.GetComponent<hintTexts>().newText("普通的布沙發，翻了翻椅墊下沒有東西");
+        GameUI.GetComponent<hintTextsController>().newText("普通的布沙發，翻了翻椅墊下沒有東西");
 
     }
 }

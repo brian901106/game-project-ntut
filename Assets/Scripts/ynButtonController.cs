@@ -42,7 +42,7 @@ public class ynButtonController : MonoBehaviour
     public void noButtonOnClick()
     {
         unShowYNButtons();
-        hintTexts.GetComponent<hintTexts>().newText("");
+        GameUI.GetComponent<hintTextsController>().newText("");
     }
 
     public void SetEventID(int id)

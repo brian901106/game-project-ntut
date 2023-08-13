@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class drawer_share : MonoBehaviour
 {
-    //public GameObject hintTexts;
+    //public GameObject hintTextsController;
     //public GameObject GameUI;
 
     private void Start()
     {
-        //hintTexts = GameObject.FindWithTag("hintTexts");
+        //hintTextsController = GameObject.FindWithTag("hintTextsController");
         //GameUI = GameObject.FindWithTag("GameUI");
     }
     private void OnMouseDown()

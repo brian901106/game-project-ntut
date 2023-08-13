@@ -7,10 +7,9 @@ public class GameManager : MonoBehaviour
     static public clue clue;
     static public eventController eventController;
     static public scenesController scenesController;
-    static public hintTexts hintTexts;
+    static public hintTextsController hintTexts;
 
     public GameObject _GameUI;
-    public GameObject _hintTexts;
     public GameObject _clue;
 
     private void Awake()
@@ -18,6 +17,6 @@ public class GameManager : MonoBehaviour
         clue = _clue.GetComponent<clue>();
         eventController = _GameUI.GetComponent<eventController>();
         scenesController = _GameUI.GetComponent<scenesController>();
-        hintTexts = _hintTexts.GetComponent<hintTexts>();
+        hintTexts = _GameUI.GetComponent<hintTextsController>();
     }
 }
