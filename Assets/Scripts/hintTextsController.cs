@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class hintTextsController : MonoBehaviour
 {
-    public GameObject HintTexts, Text, InputSystem, yBtn, nBtn, rBtn, lBtn, Avatar;
+    public GameObject HintTexts, Text, InputSystem, rBtn, lBtn, Avatar;
 
     bool _lineMode;
     
@@ -136,6 +136,8 @@ public class hintTextsController : MonoBehaviour
         _lineMode = mode;
         HintTexts.SetActive(mode);
         Avatar.SetActive(mode);
+        rBtn.SetActive(!mode);
+        lBtn.SetActive(!mode);
     }
 
     public void ChangeTextSize(int newSize)
