@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class hintTextsController : MonoBehaviour
 {
-    public GameObject HintTexts, Text, InputSystem, yBtn, nBtn;
+    public GameObject HintTexts, Text, InputSystem, yBtn, nBtn, rBtn, lBtn, Avatar;
 
-    bool _isNowInLine;
+    bool _lineMode;
+    
 
 
     // Start is called before the first frame update
@@ -20,7 +21,7 @@ public class hintTextsController : MonoBehaviour
     {
         Text.GetComponent<Text>().text = "";
         HintTexts.SetActive(false);
-        _isNowInLine = true;
+        ChangeLineMode(true);
     }
 
 
@@ -34,7 +35,7 @@ public class hintTextsController : MonoBehaviour
     /// </summary>
     public void newText(string newText)
     {
-        if (_isNowInLine)
+        if (_lineMode)
         {
             nextLine();
         }
@@ -59,7 +60,7 @@ public class hintTextsController : MonoBehaviour
     /// </param>
     public void newYN(string newText, int event_id = -1)
     {
-        if (_isNowInLine)
+        if (_lineMode)
         {
             nextLine();
         }
@@ -82,7 +83,7 @@ public class hintTextsController : MonoBehaviour
 
     public void newInput(string newText, int event_id = -1)
     {
-        if (_isNowInLine)
+        if (_lineMode)
         {
             nextLine();
         }
@@ -104,7 +105,7 @@ public class hintTextsController : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("ÂIÀ»ªÅ¥Õ");
-        if (_isNowInLine)
+        if (_lineMode)
         {
             nextLine();
         }
@@ -119,8 +120,7 @@ public class hintTextsController : MonoBehaviour
         string nowline = gameObject.GetComponent<linesController>().ReadLineFromList();
         if(nowline == "end.")
         {
-            HintTexts.SetActive(false);
-            _isNowInLine = false;
+            ChangeLineMode(false);
         }
         else
         {
@@ -128,6 +128,14 @@ public class hintTextsController : MonoBehaviour
             ChangeTextContent(nowline);
         }
         
+    }
+
+    public void ChangeLineMode(bool mode)
+    {
+        if(mode == true) nextLine();
+        _lineMode = mode;
+        HintTexts.SetActive(mode);
+        Avatar.SetActive(mode);
     }
 
     public void ChangeTextSize(int newSize)
