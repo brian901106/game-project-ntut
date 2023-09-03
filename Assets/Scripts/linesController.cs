@@ -15,7 +15,7 @@ public class linesController : MonoBehaviour
 
     public Sprite Player1;
     public Sprite Player2;
-
+    public Sprite Unknown;
 
     public List<TextAsset> fileList = new List<TextAsset>();
     private List<string> textList = new List<string>();
@@ -64,10 +64,17 @@ public class linesController : MonoBehaviour
             Avatar.GetComponent<RectTransform>().localPosition = new Vector3(-634, 102, 0);
             Avatar.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 0);
         }
-        if (chara_name == "B")
+        else if (chara_name == "B")
         {
             Avatar.GetComponent<UnityEngine.UI.Image>().sprite = Player2;
-            Avatar.GetComponent<RectTransform>().localPosition = new Vector3(1, 1, 0);
+            Avatar.GetComponent<RectTransform>().localPosition = new Vector3(634, 102, 0);
+            Avatar.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 0);
+        }
+        else
+        {
+            Avatar.GetComponent<UnityEngine.UI.Image>().sprite = Unknown;
+            Avatar.GetComponent<RectTransform>().localPosition = new Vector3(0, 102, 0);
+            Avatar.GetComponent<RectTransform>().localScale = new Vector3(1, 1, 0);
         }
     }
 }

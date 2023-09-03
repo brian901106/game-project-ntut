@@ -779,6 +779,7 @@ MonoBehaviour:
   nowName: 
   Player1: {fileID: 21300000, guid: c28216a1bf807634dafc96908775a666, type: 3}
   Player2: {fileID: 21300000, guid: 686f0348c2fffbf4580f2e48cc3ea1dc, type: 3}
+  Unknown: {fileID: 21300000, guid: 0cde3c9b876ba224894c1c6038b430b2, type: 3}
   fileList:
   - {fileID: 4900000, guid: 10e75b04c7bc72043a3e8cb72d33c3e2, type: 3}
 --- !u!1 &299656611
