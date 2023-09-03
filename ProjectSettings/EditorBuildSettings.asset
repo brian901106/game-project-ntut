@@ -11,16 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Character.unity
     guid: ece8386f440dcb845a7830e1054ad080
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/old/New_teach.unity
     guid: b3a5c596aa9249e4bbe0739faff2fce4
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/old/Player1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/old/Player2.unity
     guid: 2df9371d7aad6c54f8b33550f686b745
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/old/Player1_2.unity
     guid: a7650e46b29db66409062cd84e78fad3
+  - enabled: 1
+    path: Assets/Scenes/Ch0_A.unity
+    guid: 08fb1fdb3185adc4ca67eac1152b2820
   m_configObjects: {}
