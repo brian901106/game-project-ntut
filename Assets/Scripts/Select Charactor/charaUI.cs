@@ -50,8 +50,8 @@ public class charaUI : MonoBehaviourPunCallbacks
     [PunRPC]
     void DisableButton(string playerid)
     {
-        chara1Button.interactable = playerid == "1" ? false : true;
-        chara2Button.interactable = playerid == "2" ? false : true;
+        chara1Button.interactable = playerid == "A" ? false : true;
+        chara2Button.interactable = playerid == "B" ? false : true;
     }
 
     // Update is called once per frame
