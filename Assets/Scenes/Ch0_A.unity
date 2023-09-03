@@ -581,10 +581,8 @@ MonoBehaviour:
   HintTexts: {fileID: 0}
   Text: {fileID: 0}
   InputSystem: {fileID: 1947187950}
-  yBtn: {fileID: 0}
-  nBtn: {fileID: 0}
-  rBtn: {fileID: 0}
-  lBtn: {fileID: 0}
+  rBtn: {fileID: 1009912540}
+  lBtn: {fileID: 1010976790}
   Avatar: {fileID: 34226595}
 --- !u!114 &244985620
 MonoBehaviour:

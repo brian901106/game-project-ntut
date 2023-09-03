@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.UIElements;
 
 public class linesController : MonoBehaviour
 {
@@ -61,10 +61,13 @@ public class linesController : MonoBehaviour
         if(chara_name == "A")
         {
             Avatar.GetComponent<UnityEngine.UI.Image>().sprite = Player1;
+            Avatar.GetComponent<RectTransform>().localPosition = new Vector3(-634, 102, 0);
+            Avatar.GetComponent<RectTransform>().localScale = new Vector3(-1, 1, 0);
         }
         if (chara_name == "B")
         {
             Avatar.GetComponent<UnityEngine.UI.Image>().sprite = Player2;
+            Avatar.GetComponent<RectTransform>().localPosition = new Vector3(1, 1, 0);
         }
     }
 }
