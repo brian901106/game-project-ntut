@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class hintTextsController : MonoBehaviour
 {
-    public GameObject HintTexts, Text, InputSystem, rBtn, lBtn, Avatar, Option;
+    public GameObject HintTexts, Text, InputSystem, rBtn, lBtn, Avatar, Option, showChatBtn, chatManager;
 
     bool _lineMode;
     
@@ -149,6 +149,7 @@ public class hintTextsController : MonoBehaviour
         Avatar.SetActive(mode);
         rBtn.SetActive(!mode);
         lBtn.SetActive(!mode);
+        showChatBtn.SetActive(!mode);
     }
 
     public void ChangeTextSize(int newSize)
@@ -174,4 +175,13 @@ public class hintTextsController : MonoBehaviour
             return true;
         return false;
     }
+
+    /// <summary>
+    /// Εγ₯ά²α€Ρ«Η
+    /// </summary>
+    public void ShowChatManager()
+    {
+        chatManager.SetActive(!chatManager.activeInHierarchy);
+    }
+
 }
