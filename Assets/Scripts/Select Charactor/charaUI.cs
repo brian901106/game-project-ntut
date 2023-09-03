@@ -32,13 +32,13 @@ public class charaUI : MonoBehaviourPunCallbacks
 
     void Chara1btnOnClick()
     {
-        playerID = "1";
+        playerID = "A";
         photonView.RPC("DisableButton", RpcTarget.AllBuffered, playerID);
         gameObject.GetComponent<scenesController>().LoadLevel("Ch0_A");
     }
     void Chara2btnOnClick()
     {
-        playerID = "2";
+        playerID = "B";
         photonView.RPC("DisableButton", RpcTarget.AllBuffered, playerID);
         gameObject.GetComponent<scenesController>().LoadLevel("Ch0_A");
     }
