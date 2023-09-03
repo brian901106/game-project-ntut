@@ -19,6 +19,7 @@ TagManager:
   - hintTexts
   - hintTextsBg
   - toolBox
+  - option
   layers:
   - Default
   - TransparentFX
