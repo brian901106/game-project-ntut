@@ -12,6 +12,7 @@ public class linesController : MonoBehaviour
     public int nowFile;
     public int nowLine;
     public string nowName;
+    public string nowOptionID;
 
     public Sprite Player1;
     public Sprite Player2;
@@ -42,11 +43,21 @@ public class linesController : MonoBehaviour
     {
         string nowLineStr = textList[nowLine];
 
-        if (nowLineStr.IndexOf('¡G') !=-1)
+        if (nowLineStr.IndexOf('¡G') != -1 && nowLineStr.Substring(0, nowLineStr.IndexOf('¡G')) == "OPTION")
+        {
+            Avatar.SetActive(false);
+            nowOptionID = nowLineStr.Substring(nowLineStr.IndexOf('¡G') + 1);
+            gameObject.GetComponent<eventController>().GenerateOptionByStringID(nowOptionID);
+
+            return gameObject.GetComponent<eventController>().GetNowOptionName();
+        }
+        
+        if (nowLineStr.IndexOf('¡G') !=-1 && nowLineStr.Substring(0, nowLineStr.IndexOf('¡G')) != nowName)
         {
             ChangeAvatar(nowLineStr.Substring(0, nowLineStr.IndexOf('¡G')));
             nowName = nowLineStr.Substring(0, nowLineStr.IndexOf('¡G'));
         }
+
 
         if (textList[nowLine] == "end.")
         {
@@ -58,7 +69,8 @@ public class linesController : MonoBehaviour
     public void ChangeAvatar(string chara_name)
     {
         Debug.Log("´«¨¤¦â");
-        if(chara_name == "A")
+        Avatar.SetActive(true);
+        if (chara_name == "A")
         {
             Avatar.GetComponent<UnityEngine.UI.Image>().sprite = Player1;
             Avatar.GetComponent<RectTransform>().localPosition = new Vector3(-634, 102, 0);

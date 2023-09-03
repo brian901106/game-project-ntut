@@ -8,6 +8,10 @@ public class eventController : MonoBehaviour
 
     bool[] status = new bool[50];//記錄所有可互物品的狀態，true = 可互動，false = 不可互動
     bool[] problem = new bool[50];//紀錄所有謎題，謎題完成後改變ststus的內容
+
+    public string NowOptionName;
+    private List<string> NowOptionList = new List<string>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,8 @@ public class eventController : MonoBehaviour
         //謎題初始化
         for (int i = 0; i < 50; i++)
             problem[i] = false;
+
+        NowOptionName = "none";
     }
 
 
@@ -50,6 +56,30 @@ public class eventController : MonoBehaviour
                 clue.GetComponent<clue>().ShowPaper(0);
                 break;
         }
+    }
+
+    public void GenerateOptionByStringID(string option_id)
+    {
+        Debug.Log("GenerateOptionByStringID:"+ option_id);
+        if(option_id == "Test\r")
+        {
+            NowOptionName = "該怎麼辦呢?(Test)";
+            NowOptionList = new List<string>() { "1", "2", "3", "4" };
+            gameObject.GetComponent<hintTextsController>().newOption(NowOptionList);
+        }
+    }
+
+    public void TriggerOption(int num)
+    {
+        Debug.Log("觸發選項:" + num);
+        gameObject.GetComponent<hintTextsController>().Option.SetActive(false);
+        gameObject.GetComponent<linesController>().nowLine += 1;
+        gameObject.GetComponent<hintTextsController>().nextLine();
+    }
+
+    public string GetNowOptionName()
+    {
+        return NowOptionName;
     }
 
     public bool CheckIfProblemSolved(int problem_id)

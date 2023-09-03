@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class hintTextsController : MonoBehaviour
 {
-    public GameObject HintTexts, Text, InputSystem, rBtn, lBtn, Avatar;
+    public GameObject HintTexts, Text, InputSystem, rBtn, lBtn, Avatar, Option;
 
     bool _lineMode;
     
@@ -102,6 +103,16 @@ public class hintTextsController : MonoBehaviour
         }
 
     }
+
+    public void newOption(List<string> option_list)
+    {
+        Option.SetActive(true);
+        Option.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = option_list[0];
+        Option.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = option_list[1];
+        Option.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = option_list[2];
+        Option.transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = option_list[3];
+    }
+
     private void OnMouseDown()
     {
         Debug.Log("ÂIÀ»ªÅ¥Õ");
