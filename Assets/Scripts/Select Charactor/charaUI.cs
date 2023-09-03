@@ -1,10 +1,16 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class charaUI : MonoBehaviour
+public class charaUI : MonoBehaviourPunCallbacks
 {
+    /// <summary>
+    /// ª±®aID
+    /// </summary>
+    public static string playerID;
+
     public Button chara1Button;
     public Button chara2Button;
     public Button backButton;
@@ -26,15 +32,26 @@ public class charaUI : MonoBehaviour
 
     void Chara1btnOnClick()
     {
-        gameObject.GetComponent<scenesController>().LoadLevel("New_teach");
+        playerID = "1";
+        photonView.RPC("DisableButton", RpcTarget.AllBuffered, playerID);
+        gameObject.GetComponent<scenesController>().LoadLevel("Ch0_A");
     }
     void Chara2btnOnClick()
     {
-        gameObject.GetComponent<scenesController>().LoadLevel("New_teach");
+        playerID = "2";
+        photonView.RPC("DisableButton", RpcTarget.AllBuffered, playerID);
+        gameObject.GetComponent<scenesController>().LoadLevel("Ch0_A");
     }
     void BackbtnOnClick()
     {
         gameObject.GetComponent<scenesController>().LoadLevel(0);
+    }
+
+    [PunRPC]
+    void DisableButton(string playerid)
+    {
+        chara1Button.interactable = playerid == "1" ? false : true;
+        chara2Button.interactable = playerid == "2" ? false : true;
     }
 
     // Update is called once per frame
