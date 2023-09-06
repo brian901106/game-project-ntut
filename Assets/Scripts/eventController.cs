@@ -64,7 +64,7 @@ public class eventController : MonoBehaviour
         if(option_id == "Test\r")
         {
             NowOptionName = "¸Ó«ç»ò¿ì©O?(Test)";
-            NowOptionList = new List<string>() { "1", "2", "3", "4" };
+            NowOptionList = new List<string>() { "1", "2", "3"};
             gameObject.GetComponent<hintTextsController>().newOption(NowOptionList);
         }
     }

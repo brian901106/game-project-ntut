@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class hintTextsController : MonoBehaviour
 {
     public GameObject HintTexts, Text, InputSystem, rBtn, lBtn, Avatar, Option, showChatBtn, chatManager;
+    
 
     bool _lineMode;
     
@@ -107,10 +108,7 @@ public class hintTextsController : MonoBehaviour
     public void newOption(List<string> option_list)
     {
         Option.SetActive(true);
-        Option.transform.GetChild(0).GetChild(0).GetComponent<TextMeshProUGUI>().text = option_list[0];
-        Option.transform.GetChild(1).GetChild(0).GetComponent<TextMeshProUGUI>().text = option_list[1];
-        Option.transform.GetChild(2).GetChild(0).GetComponent<TextMeshProUGUI>().text = option_list[2];
-        Option.transform.GetChild(3).GetChild(0).GetComponent<TextMeshProUGUI>().text = option_list[3];
+        gameObject.GetComponent<optionController>().newOption(option_list);
     }
 
     private void OnMouseDown()
