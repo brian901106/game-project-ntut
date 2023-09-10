@@ -38,4 +38,9 @@ public class setting : MonoBehaviour
         settingMenu.SetActive(false);
         Debug.Log("menu closed.");
     }
+
+    public bool IsSettingOpen()
+    {
+        return settingMenu.activeInHierarchy;
+    }
 }

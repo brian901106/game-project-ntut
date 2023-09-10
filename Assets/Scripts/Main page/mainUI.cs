@@ -21,7 +21,6 @@ public class mainUI : MonoBehaviourPunCallbacks
     {
         Button Startbtn = startButton.GetComponent<Button>();
         Startbtn.onClick.AddListener(StartbtnOnClick);
-        Startbtn.interactable = false;
 
         Button Settingbtn = settingButton.GetComponent<Button>();
         Settingbtn.onClick.AddListener(SettingbtnOnClick);
@@ -32,6 +31,7 @@ public class mainUI : MonoBehaviourPunCallbacks
         //連線
         roomCount = 0;
         PhotonNetwork.ConnectUsingSettings();
+        Startbtn.interactable = PhotonNetwork.InRoom;   //如果使用者已經在房間裡了就讓startBtn可以點擊
 
         //音效、bgm
         sePlayer = GameObject.Find("SoundEffectPlayer").GetComponent<MusicPlayer>();
@@ -42,7 +42,15 @@ public class mainUI : MonoBehaviourPunCallbacks
         sePlayer.Play("Press");
 
         //按下start後進入房間，進入房間後才跳轉至選擇角色畫面
-        PhotonNetwork.JoinOrCreateRoom("DefaultRoom" + roomCount.ToString(), roomOptions, TypedLobby.Default);
+        if (!PhotonNetwork.InRoom)
+        {
+            PhotonNetwork.JoinOrCreateRoom("DefaultRoom" + roomCount.ToString(), roomOptions, TypedLobby.Default);
+        }
+        else
+        {
+            //跳轉至上次玩家玩到的章節
+            gameObject.GetComponent<scenesController>().LoadLevel("Ch0_"+charaUI.playerID);
+        }
     }
     void SettingbtnOnClick()
     {

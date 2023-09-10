@@ -20,6 +20,7 @@ public class hintTextsController : MonoBehaviour
     
 
     bool _lineMode;
+    setting set;
     
 
 
@@ -28,6 +29,8 @@ public class hintTextsController : MonoBehaviour
     {
         HintTexts = GameObject.FindWithTag("hintTexts");
         Text = HintTexts.transform.GetChild(0).gameObject;
+
+        set = this.gameObject.GetComponent<setting>();
     }
     private void Start()
     {
@@ -124,7 +127,11 @@ public class hintTextsController : MonoBehaviour
     private void OnMouseDown()
     {
         Debug.Log("ÂIÀ»ªÅ¥Õ");
-        if (_lineMode)
+        if (set.IsSettingOpen())
+        {
+            //Do Nothing
+        }
+        else if (_lineMode)
         {
             nextLine();
         }
