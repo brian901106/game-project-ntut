@@ -22,6 +22,7 @@ public class charaUI : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+
         Button Chara1btn = chara1Button.GetComponent<Button>();
         Chara1btn.onClick.AddListener(Chara1btnOnClick);
 
@@ -40,7 +41,7 @@ public class charaUI : MonoBehaviourPunCallbacks
         sePlayer.Play("Press");
 
         playerID = "A";
-        photonView.RPC("DisableButton", RpcTarget.AllBuffered, "A");
+        photonView.RPC("DisableButton", RpcTarget.OthersBuffered, "A");
         gameObject.GetComponent<scenesController>().LoadLevel("Ch0_A");
     }
     void Chara2btnOnClick()
@@ -48,7 +49,7 @@ public class charaUI : MonoBehaviourPunCallbacks
         sePlayer.Play("Press");
 
         playerID = "B";
-        photonView.RPC("DisableButton", RpcTarget.AllBuffered, "B");
+        photonView.RPC("DisableButton", RpcTarget.OthersBuffered, "B");
         gameObject.GetComponent<scenesController>().LoadLevel("Ch0_B");
     }
     void BackbtnOnClick()
