@@ -14,6 +14,8 @@ public class mainUI : MonoBehaviourPunCallbacks
     int roomCount;
     RoomOptions roomOptions = new RoomOptions() { MaxPlayers = 2 };
 
+    MusicPlayer sePlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,20 +32,25 @@ public class mainUI : MonoBehaviourPunCallbacks
         //連線
         roomCount = 0;
         PhotonNetwork.ConnectUsingSettings();
+
+        //音效、bgm
+        sePlayer = GameObject.Find("SoundEffectPlayer").GetComponent<MusicPlayer>();
     }
 
     void StartbtnOnClick()
     {
+        sePlayer.Play("Press");
+
         //按下start後進入房間，進入房間後才跳轉至選擇角色畫面
         PhotonNetwork.JoinOrCreateRoom("DefaultRoom" + roomCount.ToString(), roomOptions, TypedLobby.Default);
     }
     void SettingbtnOnClick()
     {
-
+        sePlayer.Play("Press");
     }
     void ExitbtnOnClick()
     {
-
+        sePlayer.Play("Press");
     }
 
     #region CallBacks

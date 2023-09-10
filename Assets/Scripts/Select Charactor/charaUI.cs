@@ -15,6 +15,8 @@ public class charaUI : MonoBehaviourPunCallbacks
     public Button chara2Button;
     public Button backButton;
 
+    MusicPlayer sePlayer;
+
 
     // Start is called before the first frame update
     void Start()
@@ -28,19 +30,25 @@ public class charaUI : MonoBehaviourPunCallbacks
         Button Backbtn = backButton.GetComponent<Button>();
         Backbtn.onClick.AddListener(BackbtnOnClick);
 
+        //­µ®Ä¡Bbgm
+        sePlayer = GameObject.Find("SoundEffectPlayer").GetComponent<MusicPlayer>();
     }
 
     void Chara1btnOnClick()
     {
+        sePlayer.Play("Press");
+
         playerID = "A";
         photonView.RPC("DisableButton", RpcTarget.AllBuffered, playerID);
         gameObject.GetComponent<scenesController>().LoadLevel("Ch0_A");
     }
     void Chara2btnOnClick()
     {
+        sePlayer.Play("Press");
+
         playerID = "B";
         photonView.RPC("DisableButton", RpcTarget.AllBuffered, playerID);
-        gameObject.GetComponent<scenesController>().LoadLevel("Ch0_A");
+        gameObject.GetComponent<scenesController>().LoadLevel("Ch0_B");
     }
     void BackbtnOnClick()
     {

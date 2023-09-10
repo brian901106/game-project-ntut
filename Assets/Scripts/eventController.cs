@@ -12,10 +12,13 @@ public class eventController : MonoBehaviour
     public string NowOptionName;
     private List<string> NowOptionList = new List<string>();
 
+    MusicPlayer bgmPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
         clue = GameObject.FindGameObjectWithTag("clue");
+        bgmPlayer = GameObject.Find("BgmPlayer").GetComponent<MusicPlayer>();
 
         //初始設置
         status[0] = false;    //不能打開box
@@ -26,6 +29,8 @@ public class eventController : MonoBehaviour
             problem[i] = false;
 
         NowOptionName = "none";
+
+        bgmPlayer.Play("Bgm1", true);
     }
 
 
