@@ -6,7 +6,17 @@ using UnityEngine.UI;
 
 public class hintTextsController : MonoBehaviour
 {
-    public GameObject HintTexts, Text, InputSystem, rBtn, lBtn, Avatar, Option, showChatBtn, chatManager;
+    public GameObject HintTexts, 
+                      Text, 
+                      InputSystem, 
+                      rBtn, 
+                      lBtn, 
+                      Avatar, 
+                      Option, 
+                      showChatBtn,  //顯示聊天室按鈕
+                      chatManager,  //聊天室
+                      toolBox,  //道具欄
+                      storyText;    //關卡目標提示訊息
     
 
     bool _lineMode;
@@ -139,6 +149,10 @@ public class hintTextsController : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// 切換故事模式/探索模式
+    /// </summary>
+    /// <param name="mode">true-故事模式；false-探索模式</param>
     public void ChangeLineMode(bool mode)
     {
         if(mode == true) nextLine();
@@ -148,6 +162,8 @@ public class hintTextsController : MonoBehaviour
         rBtn.SetActive(!mode);
         lBtn.SetActive(!mode);
         showChatBtn.SetActive(!mode);
+        toolBox.SetActive(!mode);
+        storyText.SetActive(!mode);
     }
 
     public void ChangeTextSize(int newSize)

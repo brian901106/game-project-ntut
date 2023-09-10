@@ -853,6 +853,8 @@ MonoBehaviour:
   Option: {fileID: 2123319283}
   showChatBtn: {fileID: 193682581}
   chatManager: {fileID: 514038448}
+  toolBox: {fileID: 377746061}
+  storyText: {fileID: 1655655851}
 --- !u!114 &244985620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +883,16 @@ MonoBehaviour:
   toolBox: {fileID: 377746061}
   toolPrefab: {fileID: 8112662513329835231, guid: fca8a50cc364a004195a62dfaa3bcf35, type: 3}
   clue: {fileID: 972392098}
+  boxList:
+  - {fileID: 329663915}
+  - {fileID: 767789537}
+  - {fileID: 116801005}
+  - {fileID: 299656611}
+  - {fileID: 1674024600}
+  - {fileID: 1795053068}
+  - {fileID: 400326279}
+  - {fileID: 550302627}
+  - {fileID: 109788118}
 --- !u!114 &244985622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,7 +1497,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &377746062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4881,7 +4893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1655655852
 RectTransform:
   m_ObjectHideFlags: 0
