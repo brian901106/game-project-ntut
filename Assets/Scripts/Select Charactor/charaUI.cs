@@ -1,6 +1,7 @@
 using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,7 +10,7 @@ public class charaUI : MonoBehaviourPunCallbacks
     /// <summary>
     /// ª±®aID
     /// </summary>
-    public static string playerID;
+    public static string playerID = "";
 
     public Button chara1Button;
     public Button chara2Button;
@@ -21,6 +22,7 @@ public class charaUI : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
+
         Button Chara1btn = chara1Button.GetComponent<Button>();
         Chara1btn.onClick.AddListener(Chara1btnOnClick);
 
@@ -39,7 +41,7 @@ public class charaUI : MonoBehaviourPunCallbacks
         sePlayer.Play("Press");
 
         playerID = "A";
-        photonView.RPC("DisableButton", RpcTarget.AllBuffered, playerID);
+        photonView.RPC("DisableButton", RpcTarget.OthersBuffered, "A");
         gameObject.GetComponent<scenesController>().LoadLevel("Ch0_A");
     }
     void Chara2btnOnClick()
@@ -47,7 +49,7 @@ public class charaUI : MonoBehaviourPunCallbacks
         sePlayer.Play("Press");
 
         playerID = "B";
-        photonView.RPC("DisableButton", RpcTarget.AllBuffered, playerID);
+        photonView.RPC("DisableButton", RpcTarget.OthersBuffered, "B");
         gameObject.GetComponent<scenesController>().LoadLevel("Ch0_B");
     }
     void BackbtnOnClick()

@@ -1,3 +1,4 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,6 +27,6 @@ public class scenesController : MonoBehaviour
 
     public void LoadLevel(string level)
     {
-        SceneManager.LoadScene(level);
+        PhotonNetwork.LoadLevel(level);
     }
 }

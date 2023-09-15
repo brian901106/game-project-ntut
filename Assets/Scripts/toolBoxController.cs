@@ -8,6 +8,7 @@ public class toolBoxController : MonoBehaviour
     public GameObject toolBox;
     public GameObject toolPrefab;
     public GameObject clue;
+    [SerializeField] GameObject[] boxList;
 
     GameObject newTool;
 
@@ -25,7 +26,7 @@ public class toolBoxController : MonoBehaviour
         //取得toolbox position，用以設定存入tools的位置
         for (int n = 0; n < 9; n++)
         {
-            toolPosition[n] = toolBox.transform.GetChild(n).position;
+            toolPosition[n] = boxList[n].transform.position;
             toolIdInBox[n] = -1;
         }
     }
