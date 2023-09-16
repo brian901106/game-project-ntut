@@ -19,7 +19,7 @@ public class toolBoxController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        toolBox = GameObject.FindGameObjectWithTag("toolBox");
+        //toolBox = GameObject.FindGameObjectWithTag("toolBox");
         clue = GameObject.FindGameObjectWithTag("clue");
         toolCount = 0;
 

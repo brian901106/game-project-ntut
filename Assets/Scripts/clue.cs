@@ -52,7 +52,7 @@ public class clue : MonoBehaviour
 
     public void GetTool(int id)
     {
-        ShowTool(id);
+        //ShowTool(id);
         GameUI.GetComponent<toolBoxController>().ShowInToolbox(0);
     }
 
